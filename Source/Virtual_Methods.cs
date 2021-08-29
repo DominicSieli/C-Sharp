@@ -21,6 +21,9 @@ class Program
     static void Main()
     {
         SubClass subClass = new SubClass();
+		BaseClass baseClass = new BaseClass();
+		
         subClass.Method();
+		baseClass.Method();
     }
 }

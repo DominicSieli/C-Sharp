@@ -1,18 +1,20 @@
 using System;
 
-class Properties
+public class Properties
 {
-    private int value;
-    public int GetValue() {return this.value;}
-    public void SetValue(int value) {this.value = value;}
+    private int field = 0;
+    
+	public int Field {get{return this.field;} set{this.field = value;}}
 }
 
 class Program
 {
     static void Main()
     {
-        Properties property = new Properties();
-        property.SetValue(400);
-        Console.WriteLine(property.GetValue());
+        Properties properties = new Properties();
+		
+        properties.Field = 400;
+		
+        Console.WriteLine(properties.Field);
     }
 }

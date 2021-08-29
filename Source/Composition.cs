@@ -10,11 +10,11 @@ public class ComponentClass
 
 public class CompositClass
 {
-    private readonly ComponentClass _componentClass = new ComponentClass();
+    private readonly ComponentClass componentClass = new ComponentClass();
 
     public void Print(string text)
     {
-        _componentClass.PrintText(text);
+        componentClass.PrintText(text);
     }
 }
 
@@ -23,6 +23,7 @@ class Program
     static void Main()
     {
         CompositClass compositClass = new CompositClass();
+		
         compositClass.Print("Yes it worked!");
     }
 }

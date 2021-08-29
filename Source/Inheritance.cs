@@ -2,28 +2,21 @@ using System;
 
 public class BaseClass
 {
-    public int Width {get; set;}
-    public int Height {get; set;}
+    public int BaseClassField {get; set;}
 
-    public void Copy()
+    public void BaseClassMethod()
     {
-        Console.WriteLine("Copied!");
-    }
-
-    public void Duplicate()
-    {
-        Console.WriteLine("Duplicated!");
+        Console.WriteLine("BaseClassMethod called!");
     }
 }
 
 public class SubClass : BaseClass
 {
-    public int X {get; set;}
-    public int Y {get; set;}
+    public int SubClassField {get; set;}
 
-    public void Coordinates()
+    public void SubClassMethod()
     {
-        Console.WriteLine("X: {0} Y: {1}", X, Y);
+        Console.WriteLine("SubClassMethod called!");
     }
 }
 
@@ -32,13 +25,12 @@ class Program
     static void Main()
     {
         SubClass subClass = new SubClass();
-        subClass.X = 200;
-        subClass.Y = 400;
-        subClass.Width = 40;
-        subClass.Height = 80;
-        subClass.Copy();
-        subClass.Duplicate();
-        subClass.Coordinates();
-        Console.WriteLine("Width: {0} Height {1}", subClass.Width, subClass.Height);
+		
+        subClass.SubClassMethod();
+		subClass.BaseClassMethod();
+		subClass.SubClassField = 200;
+		subClass.BaseClassField = 400;
+		
+        Console.WriteLine("SubClassField: {0} BaseClassField {1}", subClass.SubClassField, subClass.BaseClassField);
     }
 }
