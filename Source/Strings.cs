@@ -7,7 +7,7 @@ class Program
 		string name = "";
 
 		name = Console.ReadLine();
-		
+
 		Console.WriteLine("Hello " + name);
 	}
 }
