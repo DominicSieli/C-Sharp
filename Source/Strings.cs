@@ -1,13 +1,16 @@
 using System;
 
-class Program
+namespace Strings
 {
-	static void Main()
+	class Program
 	{
-		string name = "";
+		static void Main()
+		{
+			string name = "";
 
-		name = Console.ReadLine();
+			name = Console.ReadLine();
 
-		Console.WriteLine("Hello " + name);
+			Console.WriteLine("Hello " + name);
+		}
 	}
 }

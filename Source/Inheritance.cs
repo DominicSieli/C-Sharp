@@ -1,36 +1,39 @@
 using System;
 
-public class BaseClass
+namespace Inheritance
 {
-	public int BaseClassField {get; set;}
-
-	public void BaseClassMethod()
+	public class BaseClass
 	{
-		Console.WriteLine("BaseClassMethod called!");
+		public int BaseClassField {get; set;}
+
+		public void BaseClassMethod()
+		{
+			Console.WriteLine("BaseClassMethod called!");
+		}
 	}
-}
 
-public class SubClass : BaseClass
-{
-	public int SubClassField {get; set;}
-
-	public void SubClassMethod()
+	public class SubClass : BaseClass
 	{
-		Console.WriteLine("SubClassMethod called!");
+		public int SubClassField {get; set;}
+
+		public void SubClassMethod()
+		{
+			Console.WriteLine("SubClassMethod called!");
+		}
 	}
-}
 
-class Program
-{
-	static void Main()
+	class Program
 	{
-		SubClass subClass = new SubClass();
+		static void Main()
+		{
+			SubClass subClass = new SubClass();
 
-		subClass.SubClassMethod();
-		subClass.BaseClassMethod();
-		subClass.SubClassField = 200;
-		subClass.BaseClassField = 400;
+			subClass.SubClassMethod();
+			subClass.BaseClassMethod();
+			subClass.SubClassField = 200;
+			subClass.BaseClassField = 400;
 
-		Console.WriteLine("SubClassField: {0} BaseClassField {1}", subClass.SubClassField, subClass.BaseClassField);
+			Console.WriteLine("SubClassField: {0}\nBaseClassField {1}", subClass.SubClassField, subClass.BaseClassField);
+		}
 	}
 }

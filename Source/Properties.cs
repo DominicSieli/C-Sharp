@@ -1,20 +1,23 @@
 using System;
 
-public class Properties
+namespace Properties
 {
-	private int field = 0;
-
-	public int Field {get{return this.field;} set{this.field = value;}}
-}
-
-class Program
-{
-	static void Main()
+	public class PropertiesClass
 	{
-		Properties properties = new Properties();
+		private int field = 0;
 
-		properties.Field = 400;
+		public int Field {get{return this.field;} set{this.field = value;}}
+	}
 
-		Console.WriteLine(properties.Field);
+	class Program
+	{
+		static void Main()
+		{
+			PropertiesClass properties = new PropertiesClass();
+
+			properties.Field = 400;
+
+			Console.WriteLine(properties.Field);
+		}
 	}
 }

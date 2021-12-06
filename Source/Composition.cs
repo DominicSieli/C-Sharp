@@ -1,29 +1,32 @@
 using System;
 
-public class ComponentClass
+namespace Composition
 {
-	public void PrintText(string text)
+	public class ComponentClass
 	{
-		Console.WriteLine(text);
+		public void PrintText(string text)
+		{
+			Console.WriteLine(text);
+		}
 	}
-}
 
-public class CompositClass
-{
-	private readonly ComponentClass componentClass = new ComponentClass();
-
-	public void Print(string text)
+	public class CompositClass
 	{
-		componentClass.PrintText(text);
+		private readonly ComponentClass componentClass = new ComponentClass();
+
+		public void Print(string text)
+		{
+			componentClass.PrintText(text);
+		}
 	}
-}
 
-class Program
-{
-	static void Main()
+	class Program
 	{
-		CompositClass compositClass = new CompositClass();
+		static void Main()
+		{
+			CompositClass compositClass = new CompositClass();
 
-		compositClass.Print("Yes it worked!");
+			compositClass.Print("Yes it worked!");
+		}
 	}
 }
