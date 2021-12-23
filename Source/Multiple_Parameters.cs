@@ -1,20 +1,17 @@
 using System;
-using System.Collections.Generic;
 
 namespace MultipleParameters
 {
 	public class Multiple
 	{
-		public static List<int> Parameters(params int[] parameters)
+		public static int[] Parameters(params int[] parameters)
 		{
-			List<int> list = new List<int>();
-
-			foreach(int x in parameters)
+			for(int i = 0; i < parameters.Length; i++)
 			{
-				list.Add(x);
+				parameters[i] *= 100;
 			}
 
-			return list;
+			return parameters;
 		}
 	}
 
@@ -22,9 +19,9 @@ namespace MultipleParameters
 	{
 		static void Main()
 		{
-			List<int> list = Multiple.Parameters(1,2,3,4,5,6,7,8,9,10);
+			int[] array = Multiple.Parameters(1,2,3,4,5,6,7,8,9,10);
 
-			foreach(int x in list)
+			foreach(var x in array)
 			{
 				Console.WriteLine(x);
 			}

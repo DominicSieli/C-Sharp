@@ -6,7 +6,7 @@ namespace Events
 {
 	public class EventData : EventArgs
 	{
-		public int data {get;set;}
+		public int Data {get;set;}
 	}
 
 	public class EventPublisher
@@ -24,7 +24,7 @@ namespace Events
 		{
 			if(EventComplete == null) return;
 
-			EventComplete(this, new EventData(){ data = eventData.data});
+			EventComplete(this, new EventData(){ Data = eventData.Data});
 			Console.WriteLine("Event Complete!");
 		}
 	}
@@ -33,7 +33,7 @@ namespace Events
 	{
 		public void OnEventComplete(object source, EventData eventData)
 		{
-			Console.WriteLine("EventSubscriber1: Doing stuff! Data: " + eventData.data);
+			Console.WriteLine("EventSubscriber1: Doing stuff! Data: " + eventData.Data);
 		}
 	}
 
@@ -41,7 +41,7 @@ namespace Events
 	{
 		public void OnEventComplete(object source, EventData eventData)
 		{
-			Console.WriteLine("EventSubscriber2: Doing stuff! Data: " + eventData.data);
+			Console.WriteLine("EventSubscriber2: Doing stuff! Data: " + eventData.Data);
 		}
 	}
 
@@ -57,7 +57,7 @@ namespace Events
 			eventPublisher.EventComplete += eventSubscriber1.OnEventComplete;
 			eventPublisher.EventComplete += eventSubscriber2.OnEventComplete;
 
-			eventData.data = 100;
+			eventData.Data = 100;
 
 			eventPublisher.TriggerEvent(eventData);
 		}

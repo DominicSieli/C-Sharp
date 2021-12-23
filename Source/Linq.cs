@@ -6,8 +6,8 @@ namespace Linq
 {
 	public class Entry
 	{
-		public string tag {get; set;}
-		public int data {get; set;}
+		public string Tag {get; set;}
+		public int Data {get; set;}
 	}
 
 	public class Repository
@@ -16,14 +16,14 @@ namespace Linq
 		{
 			return new List<Entry>
 			{
-				new Entry() {tag = "Tag4", data = 4},
-				new Entry() {tag = "Tag5", data = 5},
-				new Entry() {tag = "Tag6", data = 6},
-				new Entry() {tag = "Tag7", data = 7},
-				new Entry() {tag = "Tag8", data = 8},
-				new Entry() {tag = "Tag2", data = 2},
-				new Entry() {tag = "Tag3", data = 3},
-				new Entry() {tag = "Tag1", data = 1}
+				new Entry() {Tag = "Tag4", Data = 4},
+				new Entry() {Tag = "Tag5", Data = 5},
+				new Entry() {Tag = "Tag6", Data = 6},
+				new Entry() {Tag = "Tag7", Data = 7},
+				new Entry() {Tag = "Tag8", Data = 8},
+				new Entry() {Tag = "Tag2", Data = 2},
+				new Entry() {Tag = "Tag3", Data = 3},
+				new Entry() {Tag = "Tag1", Data = 1}
 			};
 		}
 	}
@@ -33,15 +33,15 @@ namespace Linq
 		static void Main()
 		{
 			var entries = new Repository().Entries();
-			var entry1 = entries.SingleOrDefault(e1 => e1.tag == "Tag1");
-			var entriesLessThan5 = entries.Where(entry => entry.data < 5).OrderBy(entry => entry.data);
+			var entry1 = entries.SingleOrDefault(e1 => e1.Tag == "Tag1");
+			var entriesLessThan5 = entries.Where(entry => entry.Data < 5).OrderBy(entry => entry.Data);
 
 			foreach(var entry in entriesLessThan5)
 			{
-				Console.WriteLine("Tag: {0}, Data: {1}", entry.tag, entry.data);
+				Console.WriteLine("Tag: {0}, Data: {1}", entry.Tag, entry.Data);
 			}
 
-			Console.WriteLine("\nTag: {0}, Data: {1}", entry1?.tag, entry1?.data);
+			Console.WriteLine("\nTag: {0}, Data: {1}", entry1?.Tag, entry1?.Data);
 		}
 	}
 }
